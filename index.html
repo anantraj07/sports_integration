@@ -9,6 +9,11 @@
 <body>
     <canvas id="canvas3d"></canvas>
 
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <div class="toggle-icon">🌙</div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">Integration Fest</div>
@@ -64,37 +69,87 @@
         <p class="page-subtitle">Where Champions Are Made</p>
     </section>
 
+    <!-- Cricket -->
+    <section id="cricket" class="page-section">
+        <div class="section-content">
+            <div class="event-header">
+                <div class="event-icon">🏏</div>
+                <h2 class="section-title">Cricket</h2>
+            </div>
+            <p class="section-subtitle">Charge the Boundary and Feel the Roar</p>
+            
+            <div class="event-image">
+                <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&h=500&fit=crop" alt="Cricket Match">
+            </div>
+            
+            <div class="poster-container">
+                <a href="#" class="btn poster-btn">View Poster</a>
+            </div>
+            
+            <p class="section-text">
+                Charge the boundary and feel the roar of the crowd with every perfectly timed shot andsoaring six! 
+                This is where individual brilliance and team strategy integrate for a glorious victory
+                under the sun.
+            </p>
+            
+            <div class="stats-section">
+                <h3 class="stats-title"> Previous Year Tournament Highlights</h3>
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Teams</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">Footfall</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Overs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹15K</div>
+                        <div class="stat-label">Prize Pool</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="registration-box">
+                <h3 class="registration-title">Register Your Team</h3>
+                <p class="coming-soon">Coming Soon</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Football -->
-    <section id="football" class="page-section">
+    <section id="football" class="page-section alt-bg">
         <div class="section-content">
             <div class="event-header">
                 <div class="event-icon">⚽</div>
                 <h2 class="section-title">Football</h2>
             </div>
-            <p class="section-subtitle">The Ultimate Inter-College Showdown</p>
+            <p class="section-subtitle">Electrifying Battle of Skill and Stamina</p>
             
-            <!-- Poster -->
-            <div class="poster-container">
-                <a href="#" class="btn poster-btn">View Poster - Coming Soon</a>
+            <div class="event-image">
+                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&h=500&fit=crop" alt="Football Match">
             </div>
             
-            <!-- Event Description -->
-            <p class="section-text">
-                A four-day inter-college football tournament, featuring nearly 20 teams and over 300 athletes from across institutions. 
-                The event follows an intense round-robin tournament leading up to thrilling knockout rounds, with a total prize pool of ₹25,000.
-            </p>
+            <div class="poster-container">
+                <a href="#" class="btn poster-btn">View Poster</a>
+            </div>
             
             <p class="section-text">
-                One of the most popular and anticipated in the sports chapter of Integration, football combines athletic excellence with our passion for the sport.
+                A fast-paced, electrifying battle of skill and stamina, where every dribble and decisive
+                tackle writes a new story on the pitch. Unleash your passion, connect with your team, and fight
+                for that one moment of match-winning magic!
             </p>
             
-            <!-- Stats from Previous Year -->
             <div class="stats-section">
-                <h3 class="stats-title">Previous Year Highlights</h3>
+                <h3 class="stats-title"> Previous Year Tournament Highlights</h3>
                 <div class="stats-box">
                     <div class="stat-item">
                         <div class="stat-number">20</div>
-                        <div class="stat-label">Teams Participated</div>
+                        <div class="stat-label">Teams</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">300+</div>
@@ -111,237 +166,41 @@
                 </div>
             </div>
             
-            <!-- Features -->
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3 class="feature-title">Tournament Format</h3>
-                    <p class="feature-desc">
-                        Intense round-robin matches followed by knockout rounds, ensuring every team gets maximum playtime and fair competition.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">High-Energy Action</h3>
-                    <p class="feature-desc">
-                        Fast-paced matches with skilled athletes showcasing teamwork, strategy, and athletic prowess on the field.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">Major Visibility</h3>
-                    <p class="feature-desc">
-                        300+ participants and spectators make this one of the most watched events, perfect for sponsor engagement.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Registration -->
             <div class="registration-box">
                 <h3 class="registration-title">Register Your Team</h3>
                 <p class="coming-soon">Coming Soon</p>
-                <!-- Google Form Embed Space -->
-                <div id="football-form" class="form-container" style="display: none;">
-                    <!-- Replace with your Google Form link -->
-                    <!-- <iframe src="YOUR_GOOGLE_FORM_LINK" width="100%" height="600" frameborder="0"></iframe> -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cricket -->
-    <section id="cricket" class="page-section alt-bg">
-        <div class="section-content">
-            <div class="event-header">
-                <div class="event-icon">🏏</div>
-                <h2 class="section-title">Cricket</h2>
-            </div>
-            <p class="section-subtitle">Our Passion, Our Pride</p>
-            
-            <div class="poster-container">
-                <a href="#" class="btn poster-btn">View Poster - Coming Soon</a>
-            </div>
-            
-            <p class="section-text">
-                Little needs to be said about our fervour for cricket. This round-robin tournament hosts twenty teams competing in 10-over matches 
-                for a cumulative prize pool of ₹15,000.
-            </p>
-            
-            <p class="section-text">
-                With a prospective footfall of over 300 students, faculty, and sports enthusiasts, the cricket tournament offers major visibility 
-                to participating sponsors.
-            </p>
-            
-            <div class="stats-section">
-                <h3 class="stats-title">Previous Year Highlights</h3>
-                <div class="stats-box">
-                    <div class="stat-item">
-                        <div class="stat-number">20</div>
-                        <div class="stat-label">Teams Participated</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">300+</div>
-                        <div class="stat-label">Total Footfall</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10</div>
-                        <div class="stat-label">Overs Format</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">₹15K</div>
-                        <div class="stat-label">Prize Pool</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">Fast Format</h3>
-                    <p class="feature-desc">
-                        10-over matches ensure quick, thrilling action with every ball counting towards victory.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3 class="feature-title">Wide Participation</h3>
-                    <p class="feature-desc">
-                        Twenty teams from different colleges compete, bringing diverse playing styles and intense rivalries.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3 class="feature-title">Sponsor Visibility</h3>
-                    <p class="feature-desc">
-                        300+ students, faculty, and enthusiasts make this perfect for brand exposure and engagement.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="registration-box">
-                <h3 class="registration-title">Register Your Team</h3>
-                <p class="coming-soon">Coming Soon</p>
-                <div id="cricket-form" class="form-container" style="display: none;">
-                    <!-- <iframe src="YOUR_GOOGLE_FORM_LINK" width="100%" height="600" frameborder="0"></iframe> -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Table Tennis -->
-    <section id="table-tennis" class="page-section">
-        <div class="section-content">
-            <div class="event-header">
-                <div class="event-icon">🏓</div>
-                <h2 class="section-title">Table Tennis</h2>
-            </div>
-            <p class="section-subtitle">Speed, Skill, and Precision</p>
-            
-            <div class="poster-container">
-                <a href="#" class="btn poster-btn">View Poster - Coming Soon</a>
-            </div>
-            
-            <p class="section-text">
-                An open table tennis event conducted over a single day, bringing together around 50 athletes in singles and doubles categories. 
-                The matches are fast-paced, competitive, and full of energy, making it one of the most dynamic sports events of the festival.
-            </p>
-            
-            <p class="section-text">
-                With exciting cash prizes and certificates, the event attracts skilled players as well as enthusiastic audiences.
-            </p>
-            
-            <div class="stats-section">
-                <h3 class="stats-title">Previous Year Highlights</h3>
-                <div class="stats-box">
-                    <div class="stat-item">
-                        <div class="stat-number">50</div>
-                        <div class="stat-label">Athletes Participated</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">Day Event</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2</div>
-                        <div class="stat-label">Categories</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">Cash</div>
-                        <div class="stat-label">Prizes</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast-Paced Action</h3>
-                    <p class="feature-desc">
-                        Lightning-quick rallies and intense matches that keep spectators on the edge of their seats.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">Singles & Doubles</h3>
-                    <p class="feature-desc">
-                        Compete in both individual and team formats, showcasing versatility and teamwork.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3 class="feature-title">Rewards & Recognition</h3>
-                    <p class="feature-desc">
-                        Cash prizes and certificates for winners, acknowledging excellence and sportsmanship.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="registration-box">
-                <h3 class="registration-title">Register Now</h3>
-                <p class="coming-soon">Coming Soon</p>
-                <div id="tabletennis-form" class="form-container" style="display: none;">
-                    <!-- <iframe src="YOUR_GOOGLE_FORM_LINK" width="100%" height="600" frameborder="0"></iframe> -->
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Chess -->
-    <section id="chess" class="page-section alt-bg">
+    <section id="chess" class="page-section">
         <div class="section-content">
             <div class="event-header">
                 <div class="event-icon">♟️</div>
                 <h2 class="section-title">Chess</h2>
             </div>
-            <p class="section-subtitle">The Battle of Brilliant Minds</p>
+            <p class="section-subtitle">Silent Cerebral Arena of Strategy</p>
+            
+            <div class="event-image">
+                <img src="https://images.unsplash.com/photo-1580541631950-7282082b53ce?w=800&h=500&fit=crop" alt="Chess Tournament">
+            </div>
             
             <div class="poster-container">
-                <a href="#" class="btn poster-btn">View Poster - Coming Soon</a>
+                <a href="#" class="btn poster-btn">View Poster</a>
             </div>
             
             <p class="section-text">
-                An all-day rapid chess tournament following a 15+10 time format and recognized by the Sara Bangla Daba Sangstha (SBDS), 
-                affiliated with the North 24 Parganas District Chess Association.
-            </p>
-            
-            <p class="section-text">
-                The tournament consists of 6–7 Swiss rounds and draws in strong players, including FIDE-rated participants. 
-                With a footfall of around 280 and a cumulative prize pool of ₹60,000, it's one of the biggest sporting events at Integration, 
-                combining analytical skill, focus, and competitive excitement.
+               Enter the silent, cerebral arena where 64 squares become a battlefield of intricate strategy and profound foresight. Plan your attack, set a brilliant trap, and experience the supreme
+               satisfaction of a perfectly executed checkmate
             </p>
             
             <div class="stats-section">
-                <h3 class="stats-title">Previous Year Highlights</h3>
+                <h3 class="stats-title">Previous Year Tournament Highlights</h3>
                 <div class="stats-box">
                     <div class="stat-item">
                         <div class="stat-number">280</div>
-                        <div class="stat-label">Total Footfall</div>
+                        <div class="stat-label">Footfall</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">6-7</div>
@@ -358,38 +217,60 @@
                 </div>
             </div>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎖️</div>
-                    <h3 class="feature-title">FIDE-Rated Players</h3>
-                    <p class="feature-desc">
-                        Attracts top-tier chess talent including FIDE-rated players, ensuring high-quality competitive matches.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🏅</div>
-                    <h3 class="feature-title">Official Recognition</h3>
-                    <p class="feature-desc">
-                        Recognized by SBDS and affiliated with North 24 Parganas District Chess Association.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3 class="feature-title">Biggest Prize Pool</h3>
-                    <p class="feature-desc">
-                        ₹60,000 prize pool makes this one of the most lucrative chess tournaments in the region.
-                    </p>
+            <div class="registration-box">
+                <h3 class="registration-title">Register for Tournament</h3>
+                <p class="coming-soon">Coming Soon</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Tennis -->
+    <section id="table-tennis" class="page-section alt-bg">
+        <div class="section-content">
+            <div class="event-header">
+                <div class="event-icon">🏓</div>
+                <h2 class="section-title">Table Tennis</h2>
+            </div>
+            <p class="section-subtitle">Lightning Reflexes Meet Devastating Spin</p>
+            
+            <div class="event-image">
+                <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?w=800&h=500&fit=crop" alt="Table Tennis">
+            </div>
+            
+            <div class="poster-container">
+                <a href="#" class="btn poster-btn">View Poster</a>
+            </div>
+            
+            <p class="section-text">
+                Lightning-fast, pulse-pounding duels where reflexes meet precision. A single-day event bringing together 50 athletes in singles 
+                and doubles categories. Feel the adrenaline of intense rallies and the triumph of an unstoppable smash!
+            </p>
+            
+            <div class="stats-section">
+                <h3 class="stats-title">Previous Year Tournament Highlights</h3>
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Athletes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Day Event</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Cash</div>
+                        <div class="stat-label">Prizes</div>
+                    </div>
                 </div>
             </div>
             
             <div class="registration-box">
-                <h3 class="registration-title">Register for Chess Tournament</h3>
+                <h3 class="registration-title">Register Now</h3>
                 <p class="coming-soon">Coming Soon</p>
-                <div id="chess-form" class="form-container" style="display: none;">
-                    <!-- <iframe src="YOUR_GOOGLE_FORM_LINK" width="100%" height="600" frameborder="0"></iframe> -->
-                </div>
             </div>
         </div>
     </section>
@@ -401,27 +282,28 @@
                 <div class="event-icon">🃏</div>
                 <h2 class="section-title">Bridge</h2>
             </div>
-            <p class="section-subtitle">Strategic Thinking Meets Competitive Play</p>
+            <p class="section-subtitle">Sophisticated Contest of Wits and Partnership</p>
+            
+            <div class="event-image">
+                <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=500&fit=crop" alt="Bridge Card Game">
+            </div>
             
             <div class="poster-container">
-                <a href="#" class="btn poster-btn">View Poster - Coming Soon</a>
+                <a href="#" class="btn poster-btn">View Poster</a>
             </div>
             
             <p class="section-text">
-                A one-day open-to-all classical bridge tournament, conducted in a knockout format. 
-                The event has a ₹5,000 prize pool and expects a footfall of around 50 participants.
-            </p>
-            
-            <p class="section-text">
-                It is designed for card enthusiasts who enjoy strategic thinking and competitive play in an intellectually engaging environment.
+                A sophisticated contest of wits and seamless partnership, where every bid and play is a
+                hidden message. Forge a telepathic connection with your partner to outmaneuver the opposition
+                in this deeply strategic game of calculated risks.
             </p>
             
             <div class="stats-section">
-                <h3 class="stats-title">Previous Year Highlights</h3>
+                <h3 class="stats-title">Previous Year Tournament Highlights</h3>
                 <div class="stats-box">
                     <div class="stat-item">
                         <div class="stat-number">50</div>
-                        <div class="stat-label">Total Footfall</div>
+                        <div class="stat-label">Footfall</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">1</div>
@@ -438,38 +320,9 @@
                 </div>
             </div>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">Classical Format</h3>
-                    <p class="feature-desc">
-                        Traditional bridge rules and format for purists and serious players who appreciate the game's depth.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3 class="feature-title">Strategic Challenge</h3>
-                    <p class="feature-desc">
-                        Tests players' analytical abilities, partnership coordination, and tactical decision-making skills.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🌟</div>
-                    <h3 class="feature-title">Open to All</h3>
-                    <p class="feature-desc">
-                        Welcoming environment for both experienced players and enthusiastic newcomers to the game.
-                    </p>
-                </div>
-            </div>
-            
             <div class="registration-box">
-                <h3 class="registration-title">Register for Bridge Tournament</h3>
+                <h3 class="registration-title">Register for Tournament</h3>
                 <p class="coming-soon">Coming Soon</p>
-                <div id="bridge-form" class="form-container" style="display: none;">
-                    <!-- <iframe src="YOUR_GOOGLE_FORM_LINK" width="100%" height="600" frameborder="0"></iframe> -->
-                </div>
             </div>
         </div>
     </section>
