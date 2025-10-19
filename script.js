@@ -298,45 +298,6 @@ document.querySelectorAll('.event-image img').forEach(img => {
     imageObserver.observe(img);
 });
 
-// Stat counter animation
-const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumber = entry.target.querySelector('.stat-number');
-            const finalValue = statNumber.textContent;
-            
-            // Only animate if it's a number
-            if (!isNaN(parseInt(finalValue))) {
-                const numValue = parseInt(finalValue);
-                let currentValue = 0;
-                const increment = numValue / 50;
-                const duration = 1500;
-                const stepTime = duration / 50;
-                
-                statNumber.textContent = '0';
-                
-                const timer = setInterval(() => {
-                    currentValue += increment;
-                    if (currentValue >= numValue) {
-                        statNumber.textContent = finalValue;
-                        clearInterval(timer);
-                    } else {
-                        statNumber.textContent = Math.floor(currentValue);
-                    }
-                }, stepTime);
-            }
-            
-            statObserver.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.5
-});
-
-document.querySelectorAll('.stat-item').forEach(stat => {
-    statObserver.observe(stat);
-});
-
 // Smooth scroll behavior
 document.documentElement.style.scrollBehavior = 'smooth';
 
