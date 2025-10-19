@@ -1,3 +1,4 @@
+// your code goes here
 // Canvas Animation
 const canvas = document.getElementById('canvas3d');
 const ctx = canvas.getContext('2d');
@@ -31,7 +32,8 @@ class Particle {
     }
     
     draw() {
-        ctx.fillStyle = 'rgba(255, 87, 34, 0.5)';
+        const isLightMode = document.body.classList.contains('light-mode');
+        ctx.fillStyle = isLightMode ? 'rgba(255, 87, 34, 0.3)' : 'rgba(255, 87, 34, 0.5)';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -41,7 +43,8 @@ class Particle {
 const particles = Array.from({ length: 80 }, () => new Particle());
 
 function animate() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    const isLightMode = document.body.classList.contains('light-mode');
+    ctx.fillStyle = isLightMode ? 'rgba(245, 245, 245, 0.1)' : 'rgba(0, 0, 0, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     particles.forEach(p => { 
@@ -58,6 +61,31 @@ animate();
 window.addEventListener('resize', () => {
     resizeCanvas();
     particles.forEach(p => p.reset());
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const toggleIcon = themeToggle.querySelector('.toggle-icon');
+
+// Check for saved theme preference or default to 'dark'
+const currentTheme = localStorage.getItem('theme') || 'dark';
+if (currentTheme === 'light') {
+    document.body.classList.add('light-mode');
+    toggleIcon.textContent = '☀️';
+}
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    
+    if (document.body.classList.contains('light-mode')) {
+        toggleIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+        showNotification('Light mode activated! ☀️');
+    } else {
+        toggleIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+        showNotification('Dark mode activated! 🌙');
+    }
 });
 
 // Navigation
@@ -162,13 +190,20 @@ document.querySelectorAll('.page-section').forEach(section => {
 document.querySelectorAll('.poster-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
-        showNotification('Posters will be released soon! Stay tuned!');
+        showNotification('📢 Posters will be released soon! Stay tuned for updates!');
     });
 });
 
 // Notification Function
 function showNotification(message) {
+    // Remove existing notification if any
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
     const notification = document.createElement('div');
+    notification.className = 'notification';
     notification.textContent = message;
     notification.style.cssText = `
         position: fixed;
@@ -185,6 +220,7 @@ function showNotification(message) {
         animation: slideDown 0.5s ease;
         max-width: 90%;
         text-align: center;
+        font-size: 1rem;
     `;
     
     if (!document.getElementById('notification-styles')) {
@@ -238,37 +274,121 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-// Feature card hover
-document.querySelectorAll('.feature-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-15px) scale(1.02)';
+// Image lazy loading with fade-in effect
+const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.6s ease';
+            
+            img.addEventListener('load', () => {
+                img.style.opacity = '1';
+            });
+            
+            imageObserver.unobserve(img);
+        }
     });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
+}, {
+    threshold: 0.1,
+    rootMargin: '50px'
+});
+
+document.querySelectorAll('.event-image img').forEach(img => {
+    imageObserver.observe(img);
+});
+
+// Stat counter animation
+const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumber = entry.target.querySelector('.stat-number');
+            const finalValue = statNumber.textContent;
+            
+            // Only animate if it's a number
+            if (!isNaN(parseInt(finalValue))) {
+                const numValue = parseInt(finalValue);
+                let currentValue = 0;
+                const increment = numValue / 50;
+                const duration = 1500;
+                const stepTime = duration / 50;
+                
+                statNumber.textContent = '0';
+                
+                const timer = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= numValue) {
+                        statNumber.textContent = finalValue;
+                        clearInterval(timer);
+                    } else {
+                        statNumber.textContent = Math.floor(currentValue);
+                    }
+                }, stepTime);
+            }
+            
+            statObserver.unobserve(entry.target);
+        }
     });
+}, {
+    threshold: 0.5
+});
+
+document.querySelectorAll('.stat-item').forEach(stat => {
+    statObserver.observe(stat);
 });
 
 // Smooth scroll behavior
 document.documentElement.style.scrollBehavior = 'smooth';
 
-// Show/Hide Google Forms (When forms are added)
-// Uncomment and use when you add Google Forms
-/*
-function showForm(formId) {
-    const formContainer = document.getElementById(formId);
-    const comingSoon = formContainer.previousElementSibling;
-    
-    if (formContainer) {
-        comingSoon.style.display = 'none';
-        formContainer.style.display = 'block';
-    }
-}
+// Add ripple effect to buttons
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            left: ${x}px;
+            top: ${y}px;
+            transform: scale(0);
+            animation: ripple 0.6s ease-out;
+            pointer-events: none;
+        `;
+        
+        if (!document.getElementById('ripple-styles')) {
+            const style = document.createElement('style');
+            style.id = 'ripple-styles';
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+                .btn {
+                    position: relative;
+                    overflow: hidden;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+    });
+});
 
-// Example usage:
-// showForm('football-form');
-// showForm('cricket-form');
-// showForm('tabletennis-form');
-// showForm('chess-form');
-// showForm('bridge-form');
-*/
+// Welcome message on first visit
+if (!sessionStorage.getItem('welcomeShown')) {
+    setTimeout(() => {
+        showNotification('🏆 Welcome to Integration Fest 2026 Sports Events! 🎉');
+        sessionStorage.setItem('welcomeShown', 'true');
+    }, 1000);
+}
